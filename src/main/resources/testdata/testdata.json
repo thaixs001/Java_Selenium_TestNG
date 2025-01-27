@@ -1,0 +1,27 @@
+{
+    "dataLogin": {
+        "local": {
+            "username": "standard_user",
+            "password": "secret_sauce"
+        },
+        "uat": {
+            "username": "uat_user",
+            "password": "uat_password"
+        },
+        "pro": {
+            "username": "pro_user",
+            "password": "pro_password"
+        }
+    },
+    "systemName": {
+        "local": {
+            "url": "https://www.saucedemo.com/"
+        },
+        "uat": {
+            "url": "https://uat.saucedemo.com/"
+        },
+        "pro": {
+            "url": "https://pro.saucedemo.com/"
+        }
+    }
+}

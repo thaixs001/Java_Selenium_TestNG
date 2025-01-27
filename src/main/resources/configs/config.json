@@ -1,0 +1,16 @@
+{
+    "environment": "local",
+    "browser": "chrome",
+    "browserVersion": "latest",
+    "headless": false,
+    "timeout": {
+        "implicitWait": 10,
+        "explicitWait": 15,
+        "pageLoadTimeout": 30
+    },
+    "filePaths": {
+        "testData": "src/main/resources/testdata/testdata.json",
+        "logs": "src/main/resources/logs",
+        "screenshots": "src/main/resources/screenshots"
+    }
+}
