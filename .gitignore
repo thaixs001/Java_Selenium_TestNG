@@ -1,1 +1,60 @@
-/target/
+# Maven target directory
+target/
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Test output directories
+test-output/
+testng-reports/
+surefire-reports/
+
+# Build files
+*.jar
+*.war
+*.ear
+
+# Generated screenshots and logs
+src/main/resources/screenshots/
+src/main/resources/logs/
+
+# Local environment configuration files
+*.properties
+*.json
+
+# Java class files
+*.class
+
+# IDE working directories
+*.swp
+*.bak
+*.swo
+*.orig
+
+# Specific drivers
+src/main/resources/drivers/
+chromedriver*
+geckodriver*
+IEDriverServer*
+
+# Extent Reports
+ExtentReport.html
+
+# Ignore custom files or folders
+custom-output/
