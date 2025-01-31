@@ -1,24 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-27T23:15:26 ICT" name="AllTests" finished-at="2025-01-27T23:15:36 ICT" duration-ms="9513">
+  <suite started-at="2025-01-31T10:33:24 ICT" name="AllTests" finished-at="2025-01-31T10:33:28 ICT" duration-ms="4703">
     <groups>
     </groups>
-    <test started-at="2025-01-27T23:15:26 ICT" name="LoginTestSuite" finished-at="2025-01-27T23:15:36 ICT" duration-ms="9513">
+    <test started-at="2025-01-31T10:33:24 ICT" name="LoginTestSuite" finished-at="2025-01-31T10:33:28 ICT" duration-ms="4703">
       <class name="com.automation.tests.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.automation.tests.LoginTest@239a307b]" started-at="2025-01-27T23:15:26 ICT" name="setUp" finished-at="2025-01-27T23:15:33 ICT" duration-ms="6385" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.automation.tests.LoginTest@16150369]" started-at="2025-01-31T10:33:24 ICT" name="setUp" finished-at="2025-01-31T10:33:27 ICT" duration-ms="2732" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testValidLogin()[pri:0, instance:com.automation.tests.LoginTest@239a307b]" started-at="2025-01-27T23:15:33 ICT" name="testValidLogin" finished-at="2025-01-27T23:15:35 ICT" duration-ms="2702" status="PASS">
+        <test-method signature="testValidLogin()[pri:0, instance:com.automation.tests.LoginTest@16150369]" started-at="2025-01-31T10:33:27 ICT" name="testValidLogin" finished-at="2025-01-31T10:33:28 ICT" duration-ms="1459" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Title does not match after login. expected [Swag Labsa] but found [Swag Labs]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Title does not match after login. expected [Swag Labsa] but found [Swag Labs]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at com.automation.tests.LoginTest.testValidLogin(LoginTest.java:28)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.tests.LoginTest@239a307b]" started-at="2025-01-27T23:15:35 ICT" name="tearDown" finished-at="2025-01-27T23:15:36 ICT" duration-ms="346" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.automation.tests.LoginTest@16150369]" started-at="2025-01-31T10:33:28 ICT" name="tearDown" finished-at="2025-01-31T10:33:28 ICT" duration-ms="455" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testValidLogin status=FAILURE method=LoginTest.testValidLogin()[pri:0, instance:com.automation.tests.LoginTest@16150369] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.automation.tests.LoginTest@16150369]" started-at="2025-01-31T10:33:29 ICT" name="afterSuite" finished-at="2025-01-31T10:33:29 ICT" duration-ms="409" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
       </class> <!-- com.automation.tests.LoginTest -->
     </test> <!-- LoginTestSuite -->
   </suite> <!-- AllTests -->

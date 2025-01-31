@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(username, password);
 
-        String expectedTitle = "Swag Labs";
+        String expectedTitle = "Swag Labsa";
         String actualTitle = loginPage.getTitleText();
         Assert.assertEquals(actualTitle, expectedTitle, "Title does not match after login.");
         

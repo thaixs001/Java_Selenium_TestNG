@@ -35,6 +35,6 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        extent.flush(); // Xuất báo cáo khi tất cả test kết thúc
+        extent.flush();
     }
 }
