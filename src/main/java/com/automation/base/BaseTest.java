@@ -8,6 +8,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -15,6 +16,28 @@ import java.io.IOException;
 
 public class BaseTest {
     protected WebDriver driver;
+
+    // Thêm phương thức này để xóa file trong thư mục screenshots
+    @BeforeSuite
+    public void clearScreenshotsFolder() {
+        String screenshotsPath = ConfigReader.getConfig("filePaths").get("screenshots").asText();
+        File folder = new File(screenshotsPath);
+        
+        // Kiểm tra xem thư mục có tồn tại không
+        if (folder.exists() && folder.isDirectory()) {
+            File[] files = folder.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    if (!file.delete()) {
+                        System.err.println("Không thể xóa file: " + file.getName());
+                    }
+                }
+            }
+            System.out.println("Đã xóa tất cả file trong thư mục screenshots.");
+        } else {
+            System.out.println("Thư mục screenshots không tồn tại, không cần xóa.");
+        }
+    }
 
     @BeforeMethod
     public void setUp() {
@@ -28,26 +51,21 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown(ITestResult result) {
-        // Chụp màn hình nếu test fail
         if (result.getStatus() == ITestResult.FAILURE) {
-            String testName = result.getName(); // Lấy tên của test method
+            String testName = result.getName();
             ScreenshotUtil.takeScreenshot(driver, testName + "_FAILED");
         }
 
-        // Đóng trình duyệt
         if (driver != null) {
             driver.quit();
         }
 
-        // Ghi log kết quả test
         System.out.println("Test '" + result.getName() + "' đã kết thúc với trạng thái: " + getTestStatus(result));
     }
 
     @AfterSuite
     public void afterSuite() {
-        // Kiểm tra config để quyết định có mở báo cáo không
         boolean shouldOpenReport = ConfigReader.getConfig("openExtentReport").asBoolean();
-        
         if (shouldOpenReport) {
             openExtentReport();
         } else {
@@ -55,21 +73,15 @@ public class BaseTest {
         }
     }
 
-    // Phương thức hỗ trợ để lấy trạng thái test
     private String getTestStatus(ITestResult result) {
         switch (result.getStatus()) {
-            case ITestResult.SUCCESS:
-                return "PASSED";
-            case ITestResult.FAILURE:
-                return "FAILED";
-            case ITestResult.SKIP:
-                return "SKIPPED";
-            default:
-                return "UNKNOWN";
+            case ITestResult.SUCCESS: return "PASSED";
+            case ITestResult.FAILURE: return "FAILED";
+            case ITestResult.SKIP: return "SKIPPED";
+            default: return "UNKNOWN";
         }
     }
 
-    // Phương thức mở báo cáo ExtentReport
     private void openExtentReport() {
         String reportPath = "test-output/ExtentReport.html";
         File reportFile = new File(reportPath);

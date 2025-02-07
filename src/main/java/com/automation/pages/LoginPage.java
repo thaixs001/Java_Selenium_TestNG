@@ -12,9 +12,9 @@ public class LoginPage {
     }
 
     public void login(String username, String password) {
-        driver.findElement(By.xpath(LoginLocators.USERNAME_FIELD)).sendKeys(username);
-        driver.findElement(By.xpath(LoginLocators.PASSWORD_FIELD)).sendKeys(password);
-        driver.findElement(By.xpath(LoginLocators.LOGIN_BUTTON)).click();
+        this.driver.findElement(By.xpath(LoginLocators.USERNAME_FIELD)).sendKeys(username);
+        this.driver.findElement(By.xpath(LoginLocators.PASSWORD_FIELD)).sendKeys(password);
+        this.driver.findElement(By.xpath(LoginLocators.LOGIN_BUTTON)).click();
     }
 
     public String getTitleText() {

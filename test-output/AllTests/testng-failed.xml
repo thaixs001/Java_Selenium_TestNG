@@ -11,6 +11,7 @@
           <include name="testValidLogin"/>
           <include name="setUp"/>
           <include name="afterSuite"/>
+          <include name="clearScreenshotsFolder"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.automation.tests.LoginTest -->
